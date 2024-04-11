@@ -15,12 +15,13 @@ const Portfolio = (function () {
 
     function fillGallery(container) {
 
-        let div = createElement('div', [{ name: 'class', value: 'gallery' }, { name: 'href', value: 'img/02.png' }]);
+        let div = createElement('div', [{ name: 'class', value: 'gallery' }]);
 
         for (let index = 0; index < 15; index++) {
             
-            const a = createElement('a', [{name:'href',value:'www.gogle.com'},{name:'taget',value:'_blank'}]);
-            const img = createElement('img', [{ name: 'src', value: 'img/0'+index+'.png' },{name:'class',value:'item'}]);
+            const a = createElement('a', [{name:'href',value:'www.gogle.com'},{name:'taget',value:'_blank'},{name:'class',value:'item'}]);
+            // const img = createElement('img', [{ name: 'src', value: 'img/0'+index+'.png' },{name:'class',value:'item'}]);
+               const img = createElement('img', [{ name: 'src', value: 'img/0'+index+'.png' }]);
     
             a.appendChild(img);
             div.appendChild(a);

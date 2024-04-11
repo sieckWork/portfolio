@@ -214,14 +214,49 @@ GALLERY
 
 .gallery {
     display: flex;
+    flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
-    flex-wrap: wrap;
     justify-content: center;
-
 }
 
-.item {
-    width: 300px;
-    margin: 2%;
+.gallery :nth-child(1) {
+    width: 500px;
+    margin: 0 10px;
+}
+
+.gallery :nth-child(2) {
+    width: 500px;
+    margin: 0 10px;
+}
+
+.gallery :nth-child(3) {
+    margin: 0 auto;
+}
+
+.gallery :nth-child(3) img {
+    width: 850px;
+    margin: 0 auto;
+}
+
+.gallery :nth-child(4) {
+    margin: 0 auto;
+}
+
+.gallery :nth-child(4) img {
+
+    width: 850px;
+    margin: 0 auto;
+}
+
+.gallery :nth-child(13) {
+    margin: 0 auto;
+}
+
+.gallery :nth-child(13) img {
+
+    width: 850px;
+    margin: 0 auto;
+
+
 }
