@@ -260,3 +260,48 @@ GALLERY
 
 
 }
+
+/*SLIDER*/
+
+.slider-container {
+
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    right: 25%;
+    
+
+}
+
+.slider-container img {
+    width: 800px;
+    height: 600px;
+
+}
+
+.slider-container div:nth-child(1) {
+
+    display: flex;
+    background-color: #000000;
+}
+
+
+.slider-container div:nth-child(1) svg {
+    color: #000000;
+}
+
+
+.slider-container div:nth-child(3) {
+    display: flex;
+
+}
+
+.slider-container div:nth-child(3) button:nth-child(2) {
+
+    height: 90%;
+
+}
