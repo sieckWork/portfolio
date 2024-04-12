@@ -273,13 +273,14 @@ GALLERY
     z-index: 1;
     top: 25%;
     right: 25%;
-    
+    height: 600px;
 
 }
 
 .slider-container img {
-    width: 800px;
-    height: 600px;
+
+    min-width: 800px;
+    max-width: 800px;
 
 }
 
