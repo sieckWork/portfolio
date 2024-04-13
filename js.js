@@ -46,6 +46,8 @@ const Portfolio = (function () {
 const Slider = (function () {
 
     let IMG = 0;
+    let MAX_IMG = 14;
+    let MIN_IMG = 0;
 
     function nextImage() {
 
@@ -53,11 +55,13 @@ const Slider = (function () {
 
         next.addEventListener("click", function () {
 
-            if(IMG > 14){
+            if (IMG >= MAX_IMG) {
                 IMG = 0;
+            } else {
+                IMG++;
             }
             changeImg();
-            IMG++;
+
 
 
         });
@@ -71,14 +75,17 @@ const Slider = (function () {
         next.addEventListener("click", function () {
 
 
-            if(IMG <= 0){
-                IMG = 15;
-            }
+            if (IMG <= MIN_IMG) {
+                IMG = 14;
+            } else {
 
-            IMG--;
+                IMG--;
+            }
 
 
             changeImg();
+
+
 
         });
 
@@ -88,8 +95,11 @@ const Slider = (function () {
 
         let img = document.getElementById("slider-img");
 
-        img.src = 'img/0' + IMG + '.png';
 
+        img.style.backgroundImage = 'url(img/0'+IMG+'.png)';
+
+
+     
     }
 
     return {
@@ -105,7 +115,7 @@ window.addEventListener('DOMContentLoaded', function loaded(event) {
     window.removeEventListener('DOMContentLoaded', loaded, false)
 
     // instance d'object Module memoire
-    Portfolio.init(document.getElementById('slider'));
+    // Portfolio.init(document.getElementById('portfolio'));
     Slider.init(document.getElementById('slider'));
 
 
