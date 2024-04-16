@@ -1,30 +1,46 @@
 'use strict'
 // module Memoire
+
+function createElement(tagName, attributes) {
+    const element = document.createElement(tagName)
+
+    for (let i = 0; i < attributes.length; i++) {
+        element.setAttribute(attributes[i].name, attributes[i].value)
+    }
+
+    return element
+}
+
 const Portfolio = (function () {
 
+    let IMG_ID = null;
 
-    function createElement(tagName, attributes) {
-        const element = document.createElement(tagName)
 
-        for (let i = 0; i < attributes.length; i++) {
-            element.setAttribute(attributes[i].name, attributes[i].value)
-        }
-
-        return element
-    }
 
     function fillGallery(container) {
 
         let div = createElement('div', [{ name: 'class', value: 'gallery' }]);
+        let slider = document.getElementById('slider-img');
+
 
         for (let index = 0; index < 15; index++) {
 
-            const a = createElement('a', [{ name: 'href', value: 'www.gogle.com' }, { name: 'taget', value: '_blank' }, { name: 'class', value: 'item' }]);
+            const item = createElement('div', [{ name: 'name', value: index }, { name: 'class', value: 'item' }]);
             // const img = createElement('img', [{ name: 'src', value: 'img/0'+index+'.png' },{name:'class',value:'item'}]);
             const img = createElement('img', [{ name: 'src', value: 'img/0' + index + '.png' }]);
+            item.addEventListener('click', () => {
+                IMG_ID = index;
+                slider.style.display = 'flex';
+                let img = document.getElementById("slider-img");
 
-            a.appendChild(img);
-            div.appendChild(a);
+
+
+                img.style.backgroundImage = 'url(img/0' + index + '.png)';
+                img.setAttribute('value', index);
+
+            });
+            item.appendChild(img);
+            div.appendChild(item);
 
         }
 
@@ -33,9 +49,14 @@ const Portfolio = (function () {
 
     return {
         init: function (container) {
-            console.log("On");
+            console.log("On Porfolio");
+
             let items = fillGallery();
             container.appendChild(items);
+            console.log("Slider Portfolio ID");
+
+
+
 
         }
     }
@@ -45,7 +66,7 @@ const Portfolio = (function () {
 // module Memoire
 const Slider = (function () {
 
-    let IMG = 0;
+    let IMG = null;
     let MAX_IMG = 14;
     let MIN_IMG = 0;
 
@@ -53,18 +74,36 @@ const Slider = (function () {
 
         let next = document.getElementById("next");
 
+
         next.addEventListener("click", function () {
 
-            if (IMG >= MAX_IMG) {
-                IMG = 0;
+
+            if (IMG != null) {
+
+
+
+                if (IMG >= MAX_IMG) {
+                    IMG = 0;
+                } else {
+                    IMG++;
+                }
+
             } else {
-                IMG++;
+
+                let img = document.getElementById("slider-img");
+                IMG = img.getAttribute('value');
+                console.log(IMG);
+
+                fixImg();
+
+
             }
+
             changeImg();
 
-
-
         });
+
+
 
     };
 
@@ -73,19 +112,22 @@ const Slider = (function () {
         let next = document.getElementById("back");
 
         next.addEventListener("click", function () {
+            if (IMG != null) {
+                if (IMG <= MIN_IMG) {
+                    IMG = 14;
+                } else {
 
-
-            if (IMG <= MIN_IMG) {
-                IMG = 14;
+                    IMG--;
+                }
             } else {
 
-                IMG--;
+                let img = document.getElementById("slider-img");
+                IMG = img.getAttribute('value');
+                console.log(IMG);
+
+                fixImgNegative();
             }
-
-
             changeImg();
-
-
 
         });
 
@@ -94,18 +136,45 @@ const Slider = (function () {
     function changeImg() {
 
         let img = document.getElementById("slider-img");
+        console.log(img.getAttribute('value'));
 
+        img.style.backgroundImage = 'url(img/0' + IMG + '.png)';
 
-        img.style.backgroundImage = 'url(img/0'+IMG+'.png)';
+    }
 
+    function fixImg() {
+        let img = document.getElementById("slider-img");
+        IMG = img.getAttribute('value');
+        if (IMG >= MAX_IMG) {
+            IMG = 0;
+        } else {
+            IMG++;
+        }
+        console.log("fix:" + IMG);
 
-     
+    }
+
+    function fixImgNegative() {
+        let img = document.getElementById("slider-img");
+        IMG = img.getAttribute('value');
+        if (IMG <= MIN_IMG) {
+            IMG = 14;
+        } else {
+
+            IMG--;
+        }
+        console.log("fix:" + IMG);
+
     }
 
     return {
+
         init: function (container) {
+
             nextImage();
             backImage();
+
+
         }
     }
 
@@ -114,9 +183,10 @@ const Slider = (function () {
 window.addEventListener('DOMContentLoaded', function loaded(event) {
     window.removeEventListener('DOMContentLoaded', loaded, false)
 
-    // instance d'object Module memoire
-    // Portfolio.init(document.getElementById('portfolio'));
     Slider.init(document.getElementById('slider'));
+    Portfolio.init(document.getElementById('portfolio'));
+
+
 
 
 }, false)

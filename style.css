@@ -274,7 +274,10 @@ GALLERY
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    display: none;
 
 
 }
@@ -290,6 +293,7 @@ GALLERY
     align-items: center;
     justify-content: center;
     align-items: center;
+    
 
 }
 
