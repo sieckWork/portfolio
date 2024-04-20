@@ -17,9 +17,13 @@ FONT
 FONT
 */
 
+html {
+    /* filter: brightness(50%);  */
+
+}
+
 body {
     background-color: #292929;
-
 }
 
 h1 {
@@ -293,7 +297,7 @@ GALLERY
     align-items: center;
     justify-content: center;
     align-items: center;
-    
+
 
 }
 
@@ -303,4 +307,21 @@ GALLERY
     height: 30px;
     transform: scale(1.5);
     color: #000000;
+}
+
+.close-btn {
+    display: scroll;
+    position: fixed;
+    top: 80px;
+    right: 80px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+    background-color: rgba(215, 212, 212, 0.198);
+    right: 85px;
+    width: 45px;
+    border-radius: 80px;
+    right: 75px;
 }

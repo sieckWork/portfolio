@@ -1,5 +1,4 @@
 'use strict'
-// module Memoire
 
 function createElement(tagName, attributes) {
     const element = document.createElement(tagName)
@@ -38,6 +37,10 @@ const Portfolio = (function () {
                 img.style.backgroundImage = 'url(img/0' + index + '.png)';
                 img.setAttribute('value', index);
 
+                document.getElementById("portfolio").style.filter = 'brightness(50%)';
+                document.getElementById("nav").style.filter = 'brightness(50%)';
+                document.getElementById("slogan").style.filter = 'brightness(50%)';
+
             });
             item.appendChild(img);
             div.appendChild(item);
@@ -49,11 +52,9 @@ const Portfolio = (function () {
 
     return {
         init: function (container) {
-            console.log("On Porfolio");
 
             let items = fillGallery();
             container.appendChild(items);
-            console.log("Slider Portfolio ID");
 
 
 
@@ -62,8 +63,6 @@ const Portfolio = (function () {
     }
 })()
 
-'use strict'
-// module Memoire
 const Slider = (function () {
 
     let IMG = null;
@@ -92,7 +91,6 @@ const Slider = (function () {
 
                 let img = document.getElementById("slider-img");
                 IMG = img.getAttribute('value');
-                console.log(IMG);
 
                 fixImg();
 
@@ -123,7 +121,6 @@ const Slider = (function () {
 
                 let img = document.getElementById("slider-img");
                 IMG = img.getAttribute('value');
-                console.log(IMG);
 
                 fixImgNegative();
             }
@@ -136,7 +133,6 @@ const Slider = (function () {
     function changeImg() {
 
         let img = document.getElementById("slider-img");
-        console.log(img.getAttribute('value'));
 
         img.style.backgroundImage = 'url(img/0' + IMG + '.png)';
 
@@ -150,7 +146,6 @@ const Slider = (function () {
         } else {
             IMG++;
         }
-        console.log("fix:" + IMG);
 
     }
 
@@ -163,8 +158,20 @@ const Slider = (function () {
 
             IMG--;
         }
-        console.log("fix:" + IMG);
 
+    }
+
+    function closeBtn() {
+        let btn = document.getElementById("close-btn");
+        btn.addEventListener('click', () => {
+
+            document.getElementById("slider-img").style.display = 'none';
+            document.getElementById("portfolio").style.filter = 'brightness(100%)';
+            document.getElementById("nav").style.filter = 'brightness(100%)';
+            document.getElementById("slogan").style.filter = 'brightness(100%)';
+
+
+        });
     }
 
     return {
@@ -173,8 +180,7 @@ const Slider = (function () {
 
             nextImage();
             backImage();
-
-
+            closeBtn();
         }
     }
 
