@@ -79,6 +79,7 @@ a {
     text-align: center;
     margin-left: 5px;
     align-items: center;
+    
 }
 
 .logo img {
@@ -92,7 +93,8 @@ a {
     font-size: 1.5rem;
     text-align: center;
     font-family: "Barlow Condensed";
-    margin: 100px;
+    margin-top: 80px;
+    margin-bottom: 60px;
 
 }
 
@@ -219,6 +221,10 @@ GALLERY
     justify-content: center;
 }
 
+.item {
+    cursor: pointer;
+}
+
 .gallery :nth-child(1) {
     width: 500px;
     margin: 0 10px;
@@ -301,7 +307,6 @@ GALLERY
     width: 30px;
     height: 30px;
     transform: scale(1.5);
-    color: #000000;
 }
 
 .close-btn {
@@ -313,59 +318,87 @@ GALLERY
     cursor: pointer;
 }
 
-.close-btn:hover{
-    background-color: rgba(215, 212, 212, 0.198);
-    right: 85px;
-    width: 45px;
-    border-radius: 80px;
-    right: 75px;
+.close-btn img {
+    display: scroll;
+    top: 80px;
+    right: 80px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    filter: drop-shadow(2px 0px 11px #ffffff);
+
 }
 
 /* CONTACT */
 
 
-body { background:rgb(30,30,40); }
-form { max-width:420px; margin:50px auto; }
-
-.feedback-input {
-  color:white;
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight:500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border:2px solid gray;
-  transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
-  width:100%;
-  box-sizing: border-box;
-  outline:0;
+body {
+    background: rgb(30, 30, 40);
 }
 
-.feedback-input:focus { border:2px solid white; }
+form {
+    max-width: 420px;
+    margin: 50px auto;
+}
+
+.feedback-input {
+    color: white;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid gray;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.feedback-input:focus {
+    border: 2px solid white;
+}
 
 textarea {
-  height: 150px;
-  line-height: 150%;
-  resize:vertical;
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
 }
 
 [type="submit"] {
 
-  width: 100%;
-  background: gray;
-  border-radius:5px;
-  border:0;
-  cursor:pointer;
-  color:white;
-  font-size:24px;
-  padding-top:10px;
-  padding-bottom:10px;
-  transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
-  font-family: "Barlow Condensed";
+    width: 100%;
+    background: gray;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+    font-family: "Barlow Condensed";
 }
-[type="submit"]:hover { background:white; color:#000000}
+
+[type="submit"]:hover {
+    background: white;
+    color: #000000
+}
+
+@media (max-width: 800px) {
+
+    .logo a  {
+        padding: 5px;
+    }
+
+    .logo a h1 {
+        display: none;
+    }
+}
