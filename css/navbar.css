@@ -1,0 +1,67 @@
+
+
+.logo-container h1 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: "Bebas Neue";
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    height: 50px;
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar li {
+    margin: 10px;
+    font-family: "Barlow Condensed";
+
+}
+
+.logo h1 {
+    margin-left: 18px;
+}
+
+.logo a {
+    display: flex;
+    text-align: center;
+    margin-left: 5px;
+    align-items: center;
+    
+}
+
+
+.logo img {
+    border-radius: 50px;
+    height: 40px;
+}
+
+@media (max-width: 800px) {
+
+    .logo a  {
+        padding: 5px;
+    }
+
+    .logo a h1 {
+        display: none;
+    }
+}

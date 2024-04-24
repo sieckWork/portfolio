@@ -310,7 +310,6 @@ GALLERY
 }
 
 .close-btn {
-    display: scroll;
     position: fixed;
     top: 80px;
     right: 80px;
@@ -332,11 +331,6 @@ GALLERY
 }
 
 /* CONTACT */
-
-
-body {
-    background: rgb(30, 30, 40);
-}
 
 form {
     max-width: 420px;
