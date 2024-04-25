@@ -26,7 +26,7 @@ const Portfolio = (function () {
 
             const item = createElement('div', [{ name: 'name', value: index }, { name: 'class', value: 'item' }]);
             // const img = createElement('img', [{ name: 'src', value: 'img/0'+index+'.png' },{name:'class',value:'item'}]);
-            const img = createElement('img', [{ name: 'src', value: '/portfolio/img/assets/0' + index + '.png' }]);
+            const img = createElement('img', [{ name: 'src', value: '/img/0' + index + '.png' }]);
             item.addEventListener('click', () => {
                 IMG_ID = index;
                 slider.style.display = 'flex';
@@ -34,7 +34,7 @@ const Portfolio = (function () {
 
 
 
-                img.style.backgroundImage = 'url(/portfolio/img/assets/0' + index + '.png)';
+                img.style.backgroundImage = 'url(/img/0' + index + '.png)';
                 img.setAttribute('value', index);
 
                 document.getElementById("portfolio").style.filter = 'brightness(50%)';
@@ -134,7 +134,7 @@ const Slider = (function () {
 
         let img = document.getElementById("slider-img");
 
-        img.style.backgroundImage = 'url(/portfolio/img/assets/0' + IMG + '.png)';
+        img.style.backgroundImage = 'url(/img/0' + IMG + '.png)';
 
     }
 
@@ -192,7 +192,7 @@ window.addEventListener('DOMContentLoaded', function loaded(event) {
     Slider.init(document.getElementById('slider'));
     Portfolio.init(document.getElementById('portfolio'));
 
-
+    console.log('JS');
 
 
 }, false)
