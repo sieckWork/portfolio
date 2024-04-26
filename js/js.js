@@ -24,7 +24,8 @@ const Portfolio = (function () {
 
         for (let index = 0; index < 15; index++) {
 
-            const item = createElement('div', [{ name: 'name', value: index }, { name: 'class', value: 'item' }]);
+            const item = createElement('div', [{ name: 'name', value: index }, 
+            { name: 'class', value: 'item' }]);
             // const img = createElement('img', [{ name: 'src', value: 'img/0'+index+'.png' },{name:'class',value:'item'}]);
             const img = createElement('img', [{ name: 'src', value: '/img/0' + index + '.png' }]);
             item.addEventListener('click', () => {
