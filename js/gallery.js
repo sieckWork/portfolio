@@ -13,7 +13,7 @@ function createElement(tagName, attributes) {
 const Gallery = (function () {
 
 
-    let IMG_ID = null;
+    let idImage = 0;
 
 
     function createPage(container) {
@@ -21,18 +21,24 @@ const Gallery = (function () {
 
         const div = createElement('div', [{ name: 'class', value: 'gallery' }]);
 
-        const sliderContainer = createElement('div', [{ name: 'id', value: 'slider' }]);
+        const slider = createElement('div', [{ name: 'id', value: 'slider' }]);
 
-        let sliderImg = createElement('div', [{ name: 'id', value: 'slider-img' }, { name: 'class', value: 'slider-container' }]);
-        sliderImg.style.backgroundImage = "url('img/00.png')";
+        let sliderContainer = createElement('div', [{ name: 'id', value: 'slider-container' }, { name: 'class', value: 'slider-container' }]);
+
+        const imgSliderContainer = createElement('div', [{ name: 'id', value: 'img-slider-container' }, { name: 'class', value: 'img-slider-container' }]);
+        const imgSlider = createElement('img', [
+            { name: 'src', value: '/img/0' + idImage + '.png' },
+            { name: 'alt', value: 'img Slider' },
+            { name: 'id', value: 'imgSlider' },
+            { name: 'class', value: 'imgSlider' }]);
 
         const btnClose = createElement('div', [{ name: 'id', value: 'close-btn' }, { name: 'class', value: 'close-btn' }]);
         const imgClose = createElement('img', [{ name: 'src', value: '/img/close.png' }, { name: 'alt', value: 'img close' }]);
 
-        const backContainer = createElement('div', [{ name: 'id', value: 'back' }, { name: 'class', value: 'arrow' }]);
+        const backContainer = createElement('div', [{ name: 'id', value: 'back' }, { name: 'class', value: 'back-container arrow-container' }]);
         const imgBack = createElement('img', [{ name: 'src', value: '/img/left-arrow.png' }]);
 
-        const nextContainer = createElement('div', [{ name: 'id', value: 'next' }, { name: 'class', value: 'arrow' }]);
+        const nextContainer = createElement('div', [{ name: 'id', value: 'next' }, { name: 'class', value: 'next-container arrow-container' }]);
         const imgNext = createElement('img', [{ name: 'src', value: '/img/right-arrow.png' }]);
 
 
@@ -43,30 +49,47 @@ const Gallery = (function () {
             const img = createElement('img', [{ name: 'src', value: '/img/0' + index + '.png' }]);
 
             item.addEventListener('click', () => {
+                idImage = index;
+                sliderContainer.style.display = 'flex';
+                imgSlider.src = '/img/0' + index + '.png';
 
-                console.log(index);
-                
             });
 
             item.appendChild(img);
             div.appendChild(item);
         }
 
+        nextContainer.addEventListener('click', () => {
+            imgSlider.src = '/img/0' + (idImage >= 14 ? idImage = 0 : ++idImage) + '.png';
+        });
+
+        backContainer.addEventListener('click', () => {
+            imgSlider.src = '/img/0' + (idImage <= 0 ? idImage = 14 : --idImage) + '.png';
+        });
+
         container.appendChild(div);
 
         btnClose.appendChild(imgClose);
 
+        btnClose.addEventListener('click', () => {
+
+            sliderContainer.style.display = 'none';
+
+        });
 
         backContainer.appendChild(imgBack);
+        imgSliderContainer.appendChild(imgSlider);
+
         nextContainer.appendChild(imgNext);
 
-        sliderImg.appendChild(btnClose);
-        sliderImg.appendChild(backContainer);
-        sliderImg.appendChild(nextContainer);
+        sliderContainer.appendChild(btnClose);
+        sliderContainer.appendChild(backContainer);
+        sliderContainer.appendChild(imgSliderContainer);
+        sliderContainer.appendChild(nextContainer);
 
-        sliderContainer.appendChild(sliderImg);
+        slider.appendChild(sliderContainer);
 
-        container.appendChild(sliderContainer);
+        container.appendChild(slider);
 
 
         console.log(container);
