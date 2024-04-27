@@ -27,31 +27,31 @@ const Gallery = (function () {
 
         const imgSliderContainer = createElement('div', [{ name: 'id', value: 'img-slider-container' }, { name: 'class', value: 'img-slider-container' }]);
         const imgSlider = createElement('img', [
-            { name: 'src', value: '/img/0' + idImage + '.png' },
+            { name: 'src', value: 'img/0' + idImage + '.png' },
             { name: 'alt', value: 'img Slider' },
             { name: 'id', value: 'imgSlider' },
             { name: 'class', value: 'imgSlider' }]);
 
         const btnClose = createElement('div', [{ name: 'id', value: 'close-btn' }, { name: 'class', value: 'close-btn' }]);
-        const imgClose = createElement('img', [{ name: 'src', value: '/img/close.png' }, { name: 'alt', value: 'img close' }]);
+        const imgClose = createElement('img', [{ name: 'src', value: 'img/close.png' }, { name: 'alt', value: 'img close' }]);
 
         const backContainer = createElement('div', [{ name: 'id', value: 'back' }, { name: 'class', value: 'back-container arrow-container' }]);
-        const imgBack = createElement('img', [{ name: 'src', value: '/img/left-arrow.png' }]);
+        const imgBack = createElement('img', [{ name: 'src', value: 'img/left-arrow.png' }]);
 
         const nextContainer = createElement('div', [{ name: 'id', value: 'next' }, { name: 'class', value: 'next-container arrow-container' }]);
-        const imgNext = createElement('img', [{ name: 'src', value: '/img/right-arrow.png' }]);
+        const imgNext = createElement('img', [{ name: 'src', value: 'img/right-arrow.png' }]);
 
 
         for (let index = 0; index < 15; index++) {
 
 
             const item = createElement('div', [{ name: 'name', value: index }, { name: 'class', value: 'item' }]);
-            const img = createElement('img', [{ name: 'src', value: '/img/0' + index + '.png' }]);
+            const img = createElement('img', [{ name: 'src', value: 'img/0' + index + '.png' }]);
 
             item.addEventListener('click', () => {
                 idImage = index;
                 sliderContainer.style.display = 'flex';
-                imgSlider.src = '/img/0' + index + '.png';
+                imgSlider.src = 'img/0' + index + '.png';
 
             });
 
@@ -60,11 +60,11 @@ const Gallery = (function () {
         }
 
         nextContainer.addEventListener('click', () => {
-            imgSlider.src = '/img/0' + (idImage >= 14 ? idImage = 0 : ++idImage) + '.png';
+            imgSlider.src = 'img/0' + (idImage >= 14 ? idImage = 0 : ++idImage) + '.png';
         });
 
         backContainer.addEventListener('click', () => {
-            imgSlider.src = '/img/0' + (idImage <= 0 ? idImage = 14 : --idImage) + '.png';
+            imgSlider.src = 'img/0' + (idImage <= 0 ? idImage = 14 : --idImage) + '.png';
         });
 
         container.appendChild(div);
