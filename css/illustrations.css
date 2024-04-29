@@ -286,7 +286,7 @@ GALLERY
         margin: 0 auto;
     }
 
-    .gallery .item img{
+    .gallery .item img {
 
         width: 100%;
     }
@@ -303,4 +303,9 @@ GALLERY
         /* border:solid red 2px; */
         height: 100%;
     }
+
+    .slider-container {
+        height: 70%;
+    }
+    
 }
