@@ -64,4 +64,11 @@ nav {
     .logo a h1 {
         display: none;
     }
+
+    nav {
+        display: flex;
+        justify-content: flex-start;
+        width: 80%;
+    }
+
 }

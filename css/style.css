@@ -207,6 +207,7 @@ section:hover .container-asset {
 GALLERY
 
 */
+
 .portfolio {
 
     width: 100%;
@@ -331,11 +332,6 @@ GALLERY
 }
 
 /* CONTACT */
-
-
-body {
-    /* background: rgb(30, 30, 40); */
-}
 
 form {
     max-width: 420px;
