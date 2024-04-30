@@ -113,10 +113,6 @@ GALLERY
 /*SLIDER*/
 
 .slider-container {
-
-    /* background-repeat: round;
-    background-size: cover; */
-
     width: 1200px;
     height: 800px;
     display: flex;
@@ -208,7 +204,6 @@ GALLERY
 }
 
 .close-btn img {
-    /* display: scroll; */
     width: 30px;
 }
 
@@ -232,7 +227,6 @@ GALLERY
     .gallery {
         margin: 0 auto;
         width: 100%;
-        /* border: 2px solid red; */
 
     }
 
@@ -281,7 +275,6 @@ GALLERY
     }
 
     .gallery {
-        /* border: solid white 1px; */
         width: 90%;
         margin: 0 auto;
     }
@@ -300,7 +293,6 @@ GALLERY
 
     .imgSlider {
 
-        /* border:solid red 2px; */
         height: 100%;
     }
 
