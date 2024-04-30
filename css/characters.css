@@ -21,11 +21,11 @@ GALLERY
 .item {
     cursor: pointer;
     padding: 2px;
-    border: solid red 2px;
+    /* border: solid red 2px; */
 }
 
 .gallery .item img {
-    border: solid blue 2px;
+    /* border: solid blue 2px; */
     /* width: 400px; */
 }
 
@@ -187,22 +187,29 @@ GALLERY
 }
 
 .gallery :nth-child(n+14) img {
-    width: 100px;
+    width: 80px;
 
 }
 
 .gallery :nth-child(22) {
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    /* border: solid red 2px; */
+    width: 50%;
+
 }
 
 .gallery :nth-child(22) img {
-    width: 350px;
+    width: 500px;
+    max-height: 50%;
+}
+
+.gallery :nth-child(23) {
+    width: 30%;
 
 }
 
+.gallery :nth-child(23) img {
+    width: 250px;
+
+}
 
 /*SLIDER*/
 

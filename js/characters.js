@@ -60,11 +60,11 @@ const Gallery = (function () {
         }
 
         nextContainer.addEventListener('click', () => {
-            imgSlider.src = 'img/characters_0' + (idImage >= NB_IMG ? idImage = 0 : ++idImage) + '.png';
+            imgSlider.src = 'img/characters_0' + (idImage >= (NB_IMG-1) ? idImage = 0 : ++idImage) + '.png';
         });
 
         backContainer.addEventListener('click', () => {
-            imgSlider.src = 'img/characters_0' + (idImage <= 0 ? idImage = NB_IMG : --idImage) + '.png';
+            imgSlider.src = 'img/characters_0' + (idImage <= 0 ? idImage = (NB_IMG-1) : --idImage) + '.png';
         });
 
         container.appendChild(div);
