@@ -53,7 +53,7 @@ a {
 
 
 section {
-    width: 80%;
+    width: 50%;
     margin: 25px auto;
 }
 
@@ -68,7 +68,7 @@ section:hover .container-title {
 
 article {
     margin: 0 auto;
-    width: 60%;
+    width: 100%;
 
 }
 
@@ -118,7 +118,7 @@ article {
 
 section:hover .asset {
     font-size: 3.0rem;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 
@@ -132,7 +132,7 @@ section:hover .container-asset {
 
 .container-asset:hover label {
     font-size: 3.0rem;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .container-title {
