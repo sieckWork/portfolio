@@ -1,0 +1,179 @@
+.footer {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    flex-direction: column;
+    margin-top: 3%;
+}
+
+.footer h2 {
+    padding: 0.5%;
+}
+
+.footer>div {
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.footer>div>section {
+
+    display: flex;
+}
+
+.footer div section a {
+
+    padding: 2%
+}
+
+
+
+.footer>div>section:hover .container-title {
+
+    background-color: #ffffff;
+    color: #000000;
+    /* font-size: 1.2rem; */
+    transition: none;
+}
+
+
+.footer article {
+    margin: 0 auto;
+    /* width: 100%; */
+
+}
+
+.footer article div img {
+    width: 600px;
+}
+
+.footer article {
+    display: flex;
+}
+
+.footer .container-asset {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    filter: brightness(80%);
+
+
+}
+
+.footer .container-asset label {
+    cursor: pointer;
+}
+
+.footer .container-title label {
+    cursor: pointer;
+}
+
+.footer div .asset {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    font-family: "Bebas Neue";
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 30px 0;
+    background: rgba(0, 0, 0, 0.802);
+
+
+}
+
+
+
+
+
+
+.footer div section:hover .container-asset {
+    filter: brightness(100%);
+
+
+}
+
+.container-asset:hover label {
+    font-size: 1.5rem;
+    transition: none;
+}
+
+.footer-section article {
+    /* border: blue solid 2px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.footer h2 {
+    font-family: "Bebas Neue";
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.footer-section {
+    margin: 0;
+    /* border: white solid 2px; */
+    /* background-color: green; */
+    width: 400px;
+
+}
+
+
+.footer-section:hover {
+    font-size: 1.8rem;
+}
+
+
+.footer div section:hover .asset {
+    font-size: 1.8rem;
+    transition: none;
+}
+
+.footer-section .container-asset img {
+    width: 100%;
+}
+
+.footer-section {
+    margin-bottom: 2%;
+}
+
+@media (max-width: 800px) {
+
+    .footer h2{
+        font-size: 1.0rem;
+    }
+    .footer-section {
+        margin: 0;
+        /* border: white solid 2px; */
+        /* background-color: red; */
+        width: 250px;
+        padding: 2%;
+        font-size: 1.0rem;
+    }
+
+    .footer-section .asset {
+        padding: 0;
+        font-size: 1.2rem;
+    }
+    .footer-section .container-asset .asset{
+
+        font-size: 0.3;
+    }
+    .footer-section .container-asset img {
+        width: 100%;
+
+    }
+
+    .footer div .asset {
+        font-size: 1.0rem;
+        padding: 0;
+    }
+}
