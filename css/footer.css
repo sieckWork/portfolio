@@ -39,7 +39,7 @@
 
     background-color: #ffffff;
     color: #000000;
-    /* font-size: 1.2rem; */
+    font-size: 1.2rem;
     transition: none;
 }
 
@@ -126,14 +126,13 @@
 
 }
 
-
 .footer-section:hover {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 
 .footer div section:hover .asset {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     transition: none;
 }
 
@@ -147,9 +146,10 @@
 
 @media (max-width: 800px) {
 
-    .footer h2{
+    .footer h2 {
         font-size: 1.0rem;
     }
+
     .footer-section {
         margin: 0;
         /* border: white solid 2px; */
@@ -163,10 +163,12 @@
         padding: 0;
         font-size: 1.2rem;
     }
-    .footer-section .container-asset .asset{
+
+    .footer-section .container-asset .asset {
 
         font-size: 0.3;
     }
+
     .footer-section .container-asset img {
         width: 100%;
 
